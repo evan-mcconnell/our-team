@@ -1,5 +1,8 @@
 import React from 'react';
 import People from './People';
+import Profile from './Profile';
+import { Switch, Route } from 'react-router-dom';
+
 
 var masterPeopleList = [
     {
@@ -58,7 +61,7 @@ var masterPeopleList = [
         name: 'Aegon',
         house: 'Targaryan',
         description: 'Prince Who Was Promised',
-        alive: true,
+        alive: false,
         image: 'dany.jpeg'
     },
     {

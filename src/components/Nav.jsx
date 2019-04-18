@@ -31,6 +31,10 @@ function Nav(){
             justify-content: space-between;
             align-items: center;
           }
+          a:hover {
+            color: #666;
+            cursor: pointer;
+          }
           img {
             width: 46px;
             height: 40px;

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 
 function People(props){
 
@@ -16,11 +18,15 @@ function People(props){
 
     return (
         <div>
+          <Link to='./Profile'>
             <img className="picture"
-              src={require(`../assets/images/${props.image}`)}></img>
+              src={require(`../assets/images/${props.image}`)}></img></Link>
             <h3>{props.name}  <br/> <span> of House {props.house}</span></h3>
             <p><em>{props.description}</em></p>
-            <p className="alive" living={true}>I still live</p>
+
+            { living ? <p className="alive"> I still live</p> : <p>Questionable</p>}
+
+
             <img className="sigil" src={require(`../assets/images/${props.house}.jpg`)}></img>
             <style jsx>{`
                 div {
@@ -37,6 +43,7 @@ function People(props){
                   height: 100px;
                   width: 100px;
                   border-radius: 50px;
+                  cursor: crosshair;
                 }
                 span {
                   font-style: italic;
