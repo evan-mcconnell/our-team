@@ -1,15 +1,20 @@
 import React from 'React';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 
 
-function Profile(){
+function Profile(props){
   return (
     <div>
-      <Link to='/'>Back to list</Link>
-      <p>this is working</p>
+      <button onClick={props.onSwitchClick}>Yes</button>
+      <p>Profile is working</p>
     </div>
   )
+}
+
+Profile.propTypes= {
+  onSwitchClick: PropTypes.func
 }
 
 export default Profile;

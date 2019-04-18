@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import People from './People';
 import Profile from './Profile';
 import { Switch, Route } from 'react-router-dom';
@@ -73,10 +74,11 @@ var masterPeopleList = [
     },
 ];
 
-function PeopleList() {
+function PeopleList(props) {
 
     return(
         <div>
+          <button onClick={props.onSwitchClick}>Yes</button>
             <div className="top">
               {masterPeopleList.map((person, index) =>
                 <People name={person.name}
@@ -124,5 +126,9 @@ function PeopleList() {
         </div>
     );
 }
+
+PeopleList.propTypes = {
+  onSwitchClick: PropTypes.func
+};
 
 export default PeopleList;

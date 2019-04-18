@@ -13,7 +13,6 @@ function People(props){
     //   sigil = "../assets/images/stark.jpg";
     // }
     const living = props.alive;
-    console.log(props.alive);
     console.log(living);
 
     return (

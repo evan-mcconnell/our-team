@@ -1,4 +1,6 @@
 import React from 'react';
+import Profile from './Profile';
+import PeopleList from './PeopleList';
 
 class ProfileControl extends React.Component {
 
@@ -8,22 +10,29 @@ class ProfileControl extends React.Component {
       profileVisible: false,
       clickedProfile: ""
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSwitch = this.handleSwitch.bind(this);
+    this.handleOtherSwitch = this.handleOtherSwitch.bind(this);
   }
 
-  handleClick(){
-    console.log("there will be routing to" + this.state.profileVisible);
+  handleSwitch(){
     this.setState({profileVisible: true});
     this.setState({clickedProfile: "targ"});
-    console.log("there will be routing to :" + this.state.clickedProfile);
+  }
+  handleOtherSwitch(){
+    this.setState({profileVisible: false});
+    this.setState({clickedProfile: ""});
   }
 
   render(){
+    let currentVisible = null;
+    if (this.state.profileVisible) {
+      currentVisible = <Profile onSwitchClick={this.handleOtherSwitch}/>;
+    } else {
+      currentVisible = <PeopleList onSwitchClick={this.handleSwitch}/>
+    };
     return (
       <div>
-        <p>a component</p>
-        <p onClick={this.handleClick}><em>Click to change state!</em></p>
-
+        {currentVisible}
       </div>
     );
   }
