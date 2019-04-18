@@ -18,7 +18,7 @@ function People(props){
 
     return (
         <div>
-          <Link to='./Profile'>
+          <Link to='./profile'>
             <img className="picture"
               src={require(`../assets/images/${props.image}`)}></img></Link>
             <h3>{props.name}  <br/> <span> of House {props.house}</span></h3>
