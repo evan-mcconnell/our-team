@@ -5,7 +5,8 @@ class ProfileControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      profileVisible: false
+      profileVisible: false,
+      clickedProfile: ""
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -14,7 +15,7 @@ class ProfileControl extends React.Component {
     console.log("there will be routing to" + this.state.profileVisible);
     this.setState({profileVisible: true});
     this.setState({clickedProfile: "targ"});
-    console.log("there will be routing to" + this.state.profileVisible);
+    console.log("there will be routing to :" + this.state.clickedProfile);
   }
 
   render(){
